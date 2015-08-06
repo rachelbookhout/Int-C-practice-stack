@@ -12,6 +12,14 @@ namespace Stack
 			stack = new ArrayList ();
 		}
 
+		private void Push (Object item)
+		{
+			if (!item == null) 
+			{
+				stack.Add (item);
+
+			}
+		}
 		//void Push(object obj)
 			//store the given object on top of the stack (need to use object type)
 			// take in scenerior that null is passed in - do not store it
