@@ -7,30 +7,37 @@ namespace Stack
 	{
 		private ArrayList stack;
 
-		private Stack()
+		public Stack()
 		{
 			stack = new ArrayList ();
 		}
 
-		private void Push (Object item)
+		public void Push (Object item)
 		{
-			if (!item == null) 
+			if (item != null)
 			{
 				stack.Add (item);
 
 			}
 		}
-		//void Push(object obj)
-			//store the given object on top of the stack (need to use object type)
-			// take in scenerior that null is passed in - do not store it
 
-		//object Pop()
-			// removes the object at the top of the stack and returns it
-		    //take into account that you should throw a InvalidOperationExpection if its called on a empty stack
+		public object Pop()
+		{
+			if (stack.Count == 0) 
+			{
+				throw new InvalidOperationException("Can't remove an item that doesn't exist in the stack");
+			}
+			int count = stack.Count;
+			object thing = stack [count -1]; 
+			stack.RemoveAt(count-1);
+			return (thing);
+		}
 
-		//void Clear()
-			//removes all objects from the stack
-
+		void Clear()
+		{
+			stack.Clear ();
+		}
+			
 	}
 }
 
