@@ -27,9 +27,9 @@ namespace Stack
 			{
 				throw new InvalidOperationException("Can't remove an item that doesn't exist in the stack");
 			}
-			int count = stack.Count;
-			object thing = stack [count -1]; 
-			stack.RemoveAt(count-1);
+			int lastItem = stack.Count -1;
+			object thing = stack [lastItem]; 
+			stack.RemoveAt(lastItem);
 			return (thing);
 		}
 
